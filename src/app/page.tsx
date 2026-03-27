@@ -230,23 +230,7 @@ function Bio() {
         <Reveal>
           <Label text="About" />
         </Reveal>
-        <div className="grid md:grid-cols-[320px_1fr] gap-16 items-start">
-          {/* Photo */}
-          <Reveal delay={100}>
-            <div className="relative">
-              <div
-                className="w-full aspect-[3/4] rounded-xl border overflow-hidden relative"
-                style={{ borderColor: "var(--border)" }}
-              >
-                <Image src="/photos/photo-01.jpg" alt="justQuinn" fill className="object-cover" />
-              </div>
-              <div
-                className="absolute -bottom-5 left-5 right-5 h-20 rounded-full blur-3xl opacity-20"
-                style={{ background: "var(--neon)" }}
-              />
-            </div>
-          </Reveal>
-
+        <div className="max-w-3xl">
           {/* Text */}
           <div className="space-y-5">
             <Reveal delay={150}>
