@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import LogoCanvas from "./LogoCanvas";
+import AudioPlayer from "./AudioPlayer";
 
 /* ── Scroll reveal hook ──────────────────────────────────────────────────── */
 function useReveal() {
@@ -173,7 +174,7 @@ function Hero() {
 
       <div className="relative z-10 text-center px-6">
         <p
-          className="font-mono text-[11px] tracking-[0.25em] uppercase text-cyan mb-8 opacity-0 animate-fade-up"
+          className="font-mono text-[11px] tracking-[0.25em] uppercase text-white mb-8 opacity-0 animate-fade-up"
           style={{ animationDelay: "200ms", animationFillMode: "forwards" }}
         >
           Electronic Press Kit
@@ -183,7 +184,7 @@ function Hero() {
           <LogoCanvas className="animate-float w-[clamp(240px,46vw,480px)] h-auto" />
         </div>
         <p
-          className="font-mono text-[clamp(0.7rem,1.5vw,0.85rem)] tracking-[0.2em] uppercase text-slate-500 mb-12 opacity-0 animate-fade-up"
+          className="font-mono text-[clamp(0.7rem,1.5vw,0.85rem)] tracking-[0.2em] uppercase text-white mb-12 opacity-0 animate-fade-up"
           style={{ animationDelay: "550ms", animationFillMode: "forwards" }}
         >
           DJ · Producer · Curator
@@ -525,6 +526,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
+      <AudioPlayer />
       <main>
         <Hero />
         <Bio />
