@@ -255,7 +255,7 @@ function Bio() {
               >
                 {[
                   { num: "50+", label: "Shows Played" },
-                  { num: "2.3K", label: "Followers" },
+                  { num: "5K+", label: "Followers" },
                   { num: "Denver", label: "Based In" },
                 ].map(({ num, label }) => (
                   <div key={label} className="flex flex-col gap-1">
