@@ -254,7 +254,7 @@ function Bio() {
                 style={{ borderColor: "var(--border)" }}
               >
                 {[
-                  { num: "33+", label: "Shows Played" },
+                  { num: "50+", label: "Shows Played" },
                   { num: "2.3K", label: "Followers" },
                   { num: "Denver", label: "Based In" },
                 ].map(({ num, label }) => (
