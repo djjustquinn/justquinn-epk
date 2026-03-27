@@ -60,7 +60,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ["Bio", "Music", "Photos", "Shows", "Press", "Book"];
+  const links = ["Bio", "Music", "Photos", "Shows", "Book"];
 
   return (
     <nav
@@ -290,67 +290,57 @@ function Bio() {
 
 /* ── Music ───────────────────────────────────────────────────────────────── */
 function Music() {
-  type Mix = { title: string; meta: string; platform: string; embed: string };
-  const mixes: Mix[] = [
-    { title: "justQuinn on SoundCloud", meta: "Mixes & Tracks", platform: "SoundCloud", embed: "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/justquinn&color=%23ef4444&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true" },
-    { title: "Mix Title 02", meta: "Melodic Techno · 90 min", platform: "Mixcloud", embed: "" },
-    { title: "Live Set · Larimer Lounge", meta: "Live Recording · 2025", platform: "YouTube", embed: "https://www.youtube.com/embed?listType=user_uploads&list=dj.justQuinn" },
-  ];
-
   return (
     <section id="music" className="py-28 px-6" style={{ background: "var(--bg-2)" }}>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <Reveal><Label text="Music" /></Reveal>
         <Reveal delay={80}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-14">
-            Latest <span className="text-neon">Mixes</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Watch <span className="text-neon">justQuinn</span>
           </h2>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-6">
-          {mixes.map(({ title, meta, platform, embed }, i) => (
-            <Reveal key={title} delay={i * 80}>
-              <div
-                className="rounded-xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
-                style={{ background: "var(--surface)", borderColor: "var(--border)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(239,68,68,0.6)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
-              >
-                <div
-                  className="aspect-square flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg,#1a0808,#200f0f)" }}
-                >
-                  <svg className="w-12 h-12 text-neon opacity-30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    {platform === "YouTube"
-                      ? <polygon points="5 3 19 12 5 21 5 3" />
-                      : <><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/></>
-                    }
-                  </svg>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold mb-1">{title}</h3>
-                  <p className="font-mono text-[12px] text-slate-500 mb-4">{meta}</p>
-                  {embed ? (
-                    <iframe
-                      src={embed}
-                      width="100%"
-                      height="120"
-                      allow="autoplay"
-                      className="rounded border"
-                      style={{ borderColor: "var(--border)" }}
-                    />
-                  ) : (
-                    <div
-                      className="rounded border border-dashed p-4 text-center font-mono text-[11px] text-slate-600"
-                      style={{ borderColor: "var(--border)", background: "rgba(239,68,68,0.04)" }}
-                    >
-                      Paste {platform} embed here
-                    </div>
-                  )}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={140}>
+          <p className="text-slate-400 mb-10 text-[1.05rem]">
+            Live sets, mixes, and more on{" "}
+            <a
+              href="https://www.youtube.com/@dj.justQuinn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neon hover:opacity-70 transition-opacity"
+            >
+              YouTube
+            </a>
+            .
+          </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <div
+            className="rounded-2xl border overflow-hidden"
+            style={{ borderColor: "var(--border)" }}
+          >
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/IGudys5-rWs?start=1200"
+                title="justQuinn — YouTube"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={280}>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="https://www.youtube.com/@dj.justQuinn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3 border border-neon text-neon font-semibold text-sm tracking-wide rounded hover:bg-neon hover:text-black hover:shadow-[0_0_24px_rgba(239,68,68,0.5)] transition-all"
+            >
+              More on YouTube
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -472,55 +462,6 @@ function Shows() {
   );
 }
 
-/* ── Press ───────────────────────────────────────────────────────────────── */
-function Press() {
-  const logos = ["Publication 1", "Publication 2", "Blog / Podcast", "Radio Station"];
-  const quotes = [
-    { text: "justQuinn's set at [Venue] was the highlight of the night — a masterclass in energy and selection.", source: "Publication Name" },
-    { text: "One of the most exciting emerging DJs in the [City] scene right now. Watch this one closely.", source: "Blog / Podcast Name" },
-  ];
-
-  return (
-    <section id="press" className="py-28 px-6">
-      <div className="max-w-5xl mx-auto">
-        <Reveal><Label text="Press" /></Reveal>
-        <Reveal delay={80}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">
-            As <span className="text-neon">Seen In</span>
-          </h2>
-        </Reveal>
-
-        <Reveal delay={140}>
-          <div className="flex flex-wrap gap-3 mb-12">
-            {logos.map((l) => (
-              <div
-                key={l}
-                className="px-6 py-4 rounded-lg border font-mono text-sm text-slate-500 transition-all duration-300 hover:border-neon hover:text-neon cursor-default"
-                style={{ background: "var(--surface)", borderColor: "var(--border)" }}
-              >
-                {l}
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {quotes.map(({ text, source }, i) => (
-            <Reveal key={i} delay={200 + i * 80}>
-              <blockquote
-                className="p-7 rounded-xl border-l-[3px] border border-[var(--border)]"
-                style={{ background: "var(--surface)", borderLeftColor: "var(--neon)" }}
-              >
-                <p className="italic text-[1.05rem] leading-relaxed mb-4">&ldquo;{text}&rdquo;</p>
-                <cite className="font-mono text-[12px] tracking-wide text-neon not-italic">— {source}</cite>
-              </blockquote>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ── Booking ─────────────────────────────────────────────────────────────── */
 function Booking() {
@@ -663,7 +604,6 @@ export default function Page() {
         <Music />
         <Photos />
         <Shows />
-        <Press />
         <Booking />
       </main>
       <Footer />
