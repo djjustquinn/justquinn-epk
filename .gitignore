@@ -9,3 +9,5 @@ Thumbs.db
 *.flac
 *.wav
 *.aiff
+public/track.flac
+"public/Actin*"

@@ -68,7 +68,7 @@ export default function AudioPlayer() {
 
   return (
     <>
-      <audio ref={audioRef} src="/track.flac" loop preload="auto" />
+      <audio ref={audioRef} src="/track.mp3" loop preload="auto" />
 
       <div
         className={`fixed bottom-6 left-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border backdrop-blur-md transition-all duration-700 ${
