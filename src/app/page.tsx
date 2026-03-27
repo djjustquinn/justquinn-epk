@@ -145,7 +145,7 @@ function Hero() {
         alt=""
         aria-hidden="true"
         className="absolute inset-0 w-full h-full"
-        style={{ objectFit: "cover", objectPosition: "center 50%" }}
+        style={{ objectFit: "cover", objectPosition: "center 65%" }}
       />
       {/* Overlay */}
       <div
