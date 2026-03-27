@@ -313,8 +313,13 @@ function Music() {
             </div>
           </div>
         </Reveal>
+        <Reveal delay={260}>
+          <p className="mt-5 text-center font-mono text-[11px] tracking-widest uppercase text-slate-500">
+            360° video — click &amp; drag to change perspective
+          </p>
+        </Reveal>
         <Reveal delay={280}>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <a
               href="https://www.youtube.com/@dj.justQuinn"
               target="_blank"
