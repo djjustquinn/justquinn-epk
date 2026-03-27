@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/RsMon/OneDrive/Desktop/**)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npx create-next-app@latest justquinn-epk --ts --tailwind --eslint --app --src-dir --no-import-alias --use-npm --no-turbopack)",
+      "Bash(cmd.exe /c \"cd \"\"C:\\\\Users\\\\RsMon\\\\OneDrive\\\\Desktop\"\" && set PATH=C:\\\\Program Files\\\\nodejs;%PATH% && echo n | npx create-next-app@latest justquinn-epk --ts --tailwind --eslint --app --src-dir --no-import-alias --use-npm --no-turbopack 2>&1\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(cmd.exe /c \"netstat -ano | findstr :3000\")",
+      "Bash(cmd.exe /c \"taskkill /F /IM node.exe\")",
+      "Bash(cmd.exe /c \"netstat -ano | findstr LISTEN | findstr :3000\")"
+    ]
+  }
+}

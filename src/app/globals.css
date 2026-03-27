@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080808;
+  --bg-2: #0f0a0a;
+  --surface: #180f0f;
+  --border: rgba(239, 68, 68, 0.2);
+  --neon: #ef4444;
+  --neon-cyan: #f97316;
+  --neon-glow: rgba(239, 68, 68, 0.45);
+  --cyan-glow: rgba(249, 115, 22, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 3px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50%       { opacity: 0.2;  transform: scale(1.15); }
+}
+
+@keyframes scroll-line {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes logoReveal {
+  from { transform: scale(0.8) translateY(16px); }
+  to   { transform: scale(1) translateY(0px); }
+}
+
+.animate-fade-up    { animation: fadeUp 0.8s ease forwards; }
+.animate-pulse-glow { animation: pulse-glow 5s ease-in-out infinite; }
+.animate-scroll-line { animation: scroll-line 2s ease-in-out infinite; }
+.animate-float      { animation: float 4s ease-in-out infinite; }

@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "epk",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "start-dev.cmd"],
+      "port": 3001,
+      "autoPort": false
+    }
+  ]
+}
