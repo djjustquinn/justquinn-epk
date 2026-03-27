@@ -503,8 +503,8 @@ export default function Page() {
         <Hero />
         <Bio />
         <Music />
-        <Photos />
         <Booking />
+        <Photos />
       </main>
       <Footer />
     </>
