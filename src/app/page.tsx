@@ -60,7 +60,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ["Bio", "Music", "Photos", "Shows", "Book"];
+  const links = ["Bio", "Music", "Photos", "Book"];
 
   return (
     <nav
@@ -77,7 +77,7 @@ function Navbar() {
         {links.slice(0, -1).map((l) => (
           <li key={l}>
             <a
-              href={`#${l.toLowerCase()}`}
+              href={l === "Photos" ? "/photos" : `#${l.toLowerCase()}`}
               className="text-[13px] font-medium tracking-widest uppercase text-slate-400 hover:text-white transition-colors"
             >
               {l}
@@ -121,7 +121,7 @@ function Navbar() {
           {links.map((l) => (
             <a
               key={l}
-              href={`#${l === "Book" ? "booking" : l.toLowerCase()}`}
+              href={l === "Book" ? "#booking" : l === "Photos" ? "/photos" : `#${l.toLowerCase()}`}
               className="text-2xl font-semibold tracking-widest uppercase text-white"
               onClick={() => setOpen(false)}
             >
@@ -276,8 +276,8 @@ function Bio() {
 function Music() {
   return (
     <section id="music" className="py-28 px-6" style={{ background: "var(--bg-2)" }}>
-      <div className="max-w-4xl mx-auto">
-        <Reveal><Label text="Music" /></Reveal>
+      <div className="max-w-4xl mx-auto text-center">
+        <Reveal><div className="flex justify-center"><Label text="Music" /></div></Reveal>
         <Reveal delay={80}>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Watch <span className="text-neon">justQuinn</span>
@@ -330,121 +330,38 @@ function Music() {
   );
 }
 
-/* ── Photos ──────────────────────────────────────────────────────────────── */
+/* ── Photos CTA ──────────────────────────────────────────────────────────── */
 function Photos() {
-  const photos = [
-    { src: "/photos/photo-03.jpg", large: true, label: "Press Photo 1" },
-    { src: "/photos/photo-05.jpg", label: "Press Photo 2" },
-    { src: "/photos/photo-08.jpg", label: "Press Photo 3" },
-    { src: "/photos/photo-11.jpg", label: "Press Photo 4" },
-    { src: "/photos/photo-14.jpg", label: "Press Photo 5" },
-  ];
-
   return (
-    <section id="photos" className="py-28 px-6">
+    <section id="photos" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
-        <Reveal><Label text="Press Photos" /></Reveal>
-        <Reveal delay={80}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
-            Press <span className="text-neon">Gallery</span>
-          </h2>
+        <Reveal>
+          <div
+            className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-2xl border"
+            style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+          >
+            <div>
+              <Label text="Press Photos" />
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Press <span className="text-neon">Gallery</span>
+              </h2>
+              <p className="text-slate-400 mt-3 text-[1rem]">
+                High-res photos available for press & media use.
+              </p>
+            </div>
+            <a
+              href="/photos"
+              className="shrink-0 px-8 py-3 border border-neon text-neon font-semibold text-sm tracking-wide rounded hover:bg-neon hover:text-black hover:shadow-[0_0_24px_rgba(239,68,68,0.5)] transition-all whitespace-nowrap"
+            >
+              View Gallery
+            </a>
+          </div>
         </Reveal>
-        <Reveal delay={140}>
-          <p className="text-slate-500 mb-12 text-[1.05rem]">
-            High-res downloads available on request —{" "}
-            <a href="#booking" className="text-neon border-b border-transparent hover:border-neon transition-colors">
-              contact for assets
-            </a>.
-          </p>
-        </Reveal>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {photos.map(({ src, large, label }, i) => (
-            <Reveal key={src} delay={i * 60} className={large ? "col-span-2" : ""}>
-              <div className="relative group rounded-xl overflow-hidden border" style={{ borderColor: "var(--border)" }}>
-                <div
-                  className="relative w-full overflow-hidden"
-                  style={{ aspectRatio: large ? "16/9" : "4/3" }}
-                >
-                  <Image
-                    src={src}
-                    alt={label}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-neon/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xs font-bold tracking-widest uppercase">Download</span>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
 
-/* ── Shows ───────────────────────────────────────────────────────────────── */
-function Shows() {
-  const shows = [
-    { month: "APR", day: "03", venue: "Beacon Denver", location: "Denver, CO", tag: "Upcoming" },
-    { month: "MAY", day: "15", venue: "Larimer Lounge", location: "Denver, CO", tag: "Bday Takeover" },
-  ];
-
-  return (
-    <section id="shows" className="py-28 px-6" style={{ background: "var(--bg-2)" }}>
-      <div className="max-w-5xl mx-auto">
-        <Reveal><Label text="Live" /></Reveal>
-        <Reveal delay={80}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">
-            Upcoming <span className="text-neon">Shows</span>
-          </h2>
-        </Reveal>
-
-        <div className="flex flex-col gap-2">
-          {shows.map(({ month, day, venue, location, tag }, i) => (
-            <Reveal key={i} delay={i * 80}>
-              <div
-                className="flex items-center gap-6 md:gap-8 p-6 md:p-8 rounded-xl border transition-all duration-300 hover:translate-x-1 group"
-                style={{ background: "var(--surface)", borderColor: "var(--border)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(239,68,68,0.4)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
-              >
-                <div
-                  className="flex flex-col items-center pr-6 md:pr-8 min-w-[52px] border-r"
-                  style={{ borderColor: "var(--border)" }}
-                >
-                  <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-neon">{month}</span>
-                  <span className="font-mono text-3xl font-bold leading-none">{day}</span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-[1.05rem]">{venue}</h3>
-                  <p className="text-sm text-slate-500">{location}</p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span
-                    className="hidden sm:block font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 rounded border"
-                    style={{ color: "var(--neon-cyan)", borderColor: "rgba(249,115,22,0.35)", background: "rgba(249,115,22,0.08)" }}
-                  >
-                    {tag}
-                  </span>
-                  <a
-                    href={tag === "Private" ? "#booking" : "#"}
-                    className="text-[12px] font-semibold tracking-wide px-4 py-2 border rounded transition-all hover:border-neon hover:shadow-[0_0_12px_rgba(239,68,68,0.3)]"
-                    style={{ borderColor: "var(--border)", color: "var(--neon)" }}
-                  >
-                    {tag === "Private" ? "Inquire" : "Tickets"}
-                  </a>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 
 /* ── Booking ─────────────────────────────────────────────────────────────── */
@@ -587,7 +504,6 @@ export default function Page() {
         <Bio />
         <Music />
         <Photos />
-        <Shows />
         <Booking />
       </main>
       <Footer />
