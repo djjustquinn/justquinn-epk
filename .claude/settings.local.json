@@ -8,7 +8,11 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(cmd.exe /c \"netstat -ano | findstr :3000\")",
       "Bash(cmd.exe /c \"taskkill /F /IM node.exe\")",
-      "Bash(cmd.exe /c \"netstat -ano | findstr LISTEN | findstr :3000\")"
+      "Bash(cmd.exe /c \"netstat -ano | findstr LISTEN | findstr :3000\")",
+      "Bash(winget install:*)",
+      "Bash(\"/c/Users/RsMon/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-7.1.1-full_build/bin/ffmpeg.exe\" -i \"Actin  Tough \\(Original Mix\\) - Dean Turnley.mp3\" -t 90 -q:a 4 -af \"afade=t=out:st=82:d=8\" track.mp3 -y)",
+      "Bash(FFMPEG=\"/c/Users/RsMon/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin/ffmpeg.exe\")",
+      "Bash(\"$FFMPEG\" -i \"Actin  Tough \\(Original Mix\\) - Dean Turnley.mp3\" -t 90 -q:a 4 -af \"afade=t=out:st=82:d=8\" track.mp3 -y)"
     ]
   }
 }

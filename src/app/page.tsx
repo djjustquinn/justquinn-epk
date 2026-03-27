@@ -140,12 +140,13 @@ function Hero() {
   return (
     <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Hero background photo */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src="/hero-bg.jpg"
         alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full"
+        aria-hidden={true}
+        fill
+        priority
+        className="absolute inset-0"
         style={{ objectFit: "cover", objectPosition: "center 65%" }}
       />
       {/* Overlay */}
