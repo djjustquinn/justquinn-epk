@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>justQuinn — DJ / Producer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <img src="justquinn-1-blk.png" alt="justQuinn" class="nav-logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#shows">Shows</a></li>
+      <li><a href="#press">Press</a></li>
+      <li><a href="#booking" class="nav-cta">Book</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Electronic Press Kit</p>
+      <h1 class="hero-name">
+        <span class="name-just">just</span><span class="name-quinn">Quinn</span>
+      </h1>
+      <p class="hero-tagline">DJ · Producer · Curator</p>
+      <div class="hero-actions">
+        <a href="#music" class="btn btn-primary">Listen Now</a>
+        <a href="#booking" class="btn btn-outline">Book Me</a>
+      </div>
+    </div>
+    <a href="#bio" class="scroll-hint" aria-label="Scroll down">
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- BIO -->
+  <section id="bio" class="section">
+    <div class="container">
+      <div class="section-label">About</div>
+      <div class="bio-grid">
+        <div class="bio-image-wrap">
+          <div class="bio-image-placeholder">
+            <span>Photo</span>
+          </div>
+          <div class="bio-image-glow"></div>
+        </div>
+        <div class="bio-text">
+          <h2 class="section-title">The <span class="neon">Sound</span> of justQuinn</h2>
+          <p>justQuinn is a DJ and producer carving a distinct lane in the electronic music scene — blending <strong>deep house, melodic techno, and bass-heavy club cuts</strong> into sets that move both the mind and the dancefloor.</p>
+          <p>With residencies across [City] and appearances at [Venue/Festival], justQuinn has built a reputation for reading a room and taking it somewhere unexpected. Every set is a journey — no two are the same.</p>
+          <p>Off the decks, Quinn crafts original productions that sit at the intersection of groove and atmosphere, releasing on [Label] and drawing support from [Notable DJs].</p>
+          <div class="bio-stats">
+            <div class="stat">
+              <span class="stat-num neon">50+</span>
+              <span class="stat-label">Shows Played</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num neon">10K+</span>
+              <span class="stat-label">Followers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num neon">3</span>
+              <span class="stat-label">Releases</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music" class="section section-dark">
+    <div class="container">
+      <div class="section-label">Music</div>
+      <h2 class="section-title">Latest <span class="neon">Mixes</span></h2>
+      <div class="music-grid">
+
+        <div class="mix-card">
+          <div class="mix-cover">
+            <div class="mix-cover-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/></svg>
+            </div>
+          </div>
+          <div class="mix-info">
+            <h3>Mix Title 01</h3>
+            <p class="mix-meta">Deep House · 60 min</p>
+            <!-- Replace src with your SoundCloud embed URL -->
+            <div class="embed-placeholder" data-platform="SoundCloud">
+              <span>Paste SoundCloud embed here</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mix-card">
+          <div class="mix-cover">
+            <div class="mix-cover-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/></svg>
+            </div>
+          </div>
+          <div class="mix-info">
+            <h3>Mix Title 02</h3>
+            <p class="mix-meta">Melodic Techno · 90 min</p>
+            <div class="embed-placeholder" data-platform="Mixcloud">
+              <span>Paste Mixcloud embed here</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mix-card">
+          <div class="mix-cover">
+            <div class="mix-cover-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="mix-info">
+            <h3>Live Set · [Venue]</h3>
+            <p class="mix-meta">Live Recording · 2024</p>
+            <div class="embed-placeholder" data-platform="YouTube">
+              <span>Paste YouTube embed here</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos" class="section">
+    <div class="container">
+      <div class="section-label">Press Photos</div>
+      <h2 class="section-title">Press <span class="neon">Gallery</span></h2>
+      <p class="section-sub">High-res downloads available on request — <a href="#booking">contact for assets</a>.</p>
+      <div class="photo-grid">
+        <div class="photo-item photo-large">
+          <div class="photo-placeholder"><span>Photo 1</span></div>
+          <div class="photo-overlay"><span>Download</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span>Photo 2</span></div>
+          <div class="photo-overlay"><span>Download</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span>Photo 3</span></div>
+          <div class="photo-overlay"><span>Download</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span>Photo 4</span></div>
+          <div class="photo-overlay"><span>Download</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span>Photo 5</span></div>
+          <div class="photo-overlay"><span>Download</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section id="shows" class="section section-dark">
+    <div class="container">
+      <div class="section-label">Live</div>
+      <h2 class="section-title">Upcoming <span class="neon">Shows</span></h2>
+      <div class="shows-list">
+
+        <div class="show-item">
+          <div class="show-date">
+            <span class="show-month">APR</span>
+            <span class="show-day">12</span>
+          </div>
+          <div class="show-details">
+            <h3 class="show-venue">Venue Name</h3>
+            <p class="show-location">City, State</p>
+          </div>
+          <div class="show-meta">
+            <span class="show-tag">Headline</span>
+            <a href="#" class="btn btn-sm">Tickets</a>
+          </div>
+        </div>
+
+        <div class="show-item">
+          <div class="show-date">
+            <span class="show-month">APR</span>
+            <span class="show-day">26</span>
+          </div>
+          <div class="show-details">
+            <h3 class="show-venue">Club / Festival Name</h3>
+            <p class="show-location">City, State</p>
+          </div>
+          <div class="show-meta">
+            <span class="show-tag">B2B</span>
+            <a href="#" class="btn btn-sm">Tickets</a>
+          </div>
+        </div>
+
+        <div class="show-item">
+          <div class="show-date">
+            <span class="show-month">MAY</span>
+            <span class="show-day">03</span>
+          </div>
+          <div class="show-details">
+            <h3 class="show-venue">Private / Brand Event</h3>
+            <p class="show-location">City, State</p>
+          </div>
+          <div class="show-meta">
+            <span class="show-tag">Private</span>
+            <a href="#booking" class="btn btn-sm">Inquire</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section id="press" class="section">
+    <div class="container">
+      <div class="section-label">Press</div>
+      <h2 class="section-title">As <span class="neon">Seen In</span></h2>
+      <div class="press-logos">
+        <div class="press-logo-item">Publication 1</div>
+        <div class="press-logo-item">Publication 2</div>
+        <div class="press-logo-item">Blog / Podcast</div>
+        <div class="press-logo-item">Radio Station</div>
+      </div>
+      <div class="press-quotes">
+        <blockquote class="press-quote">
+          <p>"justQuinn's set at [Venue] was the highlight of the night — a masterclass in energy and selection."</p>
+          <cite>— Publication Name</cite>
+        </blockquote>
+        <blockquote class="press-quote">
+          <p>"One of the most exciting emerging DJs in the [City] scene right now. Watch this one closely."</p>
+          <cite>— Blog / Podcast Name</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="section section-dark">
+    <div class="container container-narrow">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Book <span class="neon">justQuinn</span></h2>
+      <p class="section-sub">For bookings, collaborations, and press inquiries — fill out the form below or reach out directly.</p>
+
+      <div class="contact-split">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-label">Booking</span>
+            <a href="mailto:booking@justquinn.com" class="contact-value">booking@justquinn.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Management</span>
+            <a href="mailto:mgmt@justquinn.com" class="contact-value">mgmt@justquinn.com</a>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.instagram.com/dj.justquinn/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="SoundCloud">SC</a>
+            <a href="#" class="social-link" aria-label="Mixcloud">MC</a>
+            <a href="#" class="social-link" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry" name="inquiry">
+              <option value="">Select type...</option>
+              <option>Booking / Performance</option>
+              <option>Collaboration / Production</option>
+              <option>Press / Interview</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your event, venue, date, budget..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
+          <p class="form-success" id="form-success">Message sent! I'll get back to you within 48 hours.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-name">justQuinn</p>
+      <p class="footer-copy">&copy; 2026 justQuinn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
