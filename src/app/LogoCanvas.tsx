@@ -48,7 +48,7 @@ export default function LogoCanvas({ className }: { className?: string }) {
       style={{
         display: "block",
         filter:
-          "drop-shadow(0 0 28px rgba(192,132,252,0.9)) drop-shadow(0 0 70px rgba(192,132,252,0.4)) drop-shadow(0 0 110px rgba(192,132,252,0.2))",
+          "drop-shadow(0 0 28px rgba(239,68,68,0.9)) drop-shadow(0 0 70px rgba(239,68,68,0.5)) drop-shadow(0 0 110px rgba(239,68,68,0.25))",
       }}
     />
   );

@@ -19,6 +19,14 @@
   padding: 0;
 }
 
+/* Force all neon Tailwind utilities to use the CSS variable */
+.text-neon   { color: var(--neon) !important; }
+.bg-neon     { background-color: var(--neon) !important; }
+.border-neon { border-color: var(--neon) !important; }
+.text-cyan   { color: var(--neon-cyan) !important; }
+.bg-cyan     { background-color: var(--neon-cyan) !important; }
+.border-cyan { border-color: var(--neon-cyan) !important; }
+
 html {
   scroll-behavior: smooth;
 }
@@ -39,8 +47,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.12; transform: scale(1); }
-  50%       { opacity: 0.2;  transform: scale(1.15); }
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.25; transform: scale(1.15); }
 }
 
 @keyframes scroll-line {
