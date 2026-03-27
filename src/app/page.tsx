@@ -65,7 +65,7 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 transition-all duration-300 ${
-        scrolled ? "py-3 bg-[#080810]/85 backdrop-blur-xl border-b border-[rgba(192,132,252,0.15)]" : "py-5"
+        scrolled ? "py-3 bg-[#080810]/85 backdrop-blur-xl border-b border-[rgba(239,68,68,0.2)]" : "py-5"
       }`}
     >
       <a href="#hero" className="flex items-center">
@@ -160,7 +160,7 @@ function Hero() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(192,132,252,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(192,132,252,0.05) 1px,transparent 1px)",
+            "linear-gradient(rgba(239,68,68,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(239,68,68,0.05) 1px,transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -194,13 +194,13 @@ function Hero() {
         >
           <a
             href="#music"
-            className="px-8 py-3 bg-neon text-black font-semibold text-sm tracking-wide rounded hover:bg-purple-300 hover:shadow-[0_0_24px_rgba(192,132,252,0.6)] transition-all -translate-y-0 hover:-translate-y-0.5"
+            className="px-8 py-3 bg-neon text-black font-semibold text-sm tracking-wide rounded hover:bg-red-400 hover:shadow-[0_0_24px_rgba(239,68,68,0.6)] transition-all -translate-y-0 hover:-translate-y-0.5"
           >
             Listen Now
           </a>
           <a
             href="#booking"
-            className="px-8 py-3 border border-neon text-neon font-semibold text-sm tracking-wide rounded hover:bg-neon hover:text-black hover:shadow-[0_0_24px_rgba(192,132,252,0.5)] transition-all"
+            className="px-8 py-3 border border-neon text-neon font-semibold text-sm tracking-wide rounded hover:bg-neon hover:text-black hover:shadow-[0_0_24px_rgba(239,68,68,0.5)] transition-all"
           >
             Book Me
           </a>
@@ -215,7 +215,7 @@ function Hero() {
       >
         <span
           className="block w-px h-16 mx-auto animate-scroll-line"
-          style={{ background: "linear-gradient(to bottom, transparent, #c084fc)" }}
+          style={{ background: "linear-gradient(to bottom, transparent, #ef4444)" }}
         />
       </a>
     </section>
@@ -312,12 +312,12 @@ function Music() {
               <div
                 className="rounded-xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
                 style={{ background: "var(--surface)", borderColor: "var(--border)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(192,132,252,0.6)")}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(239,68,68,0.6)")}
                 onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
               >
                 <div
                   className="aspect-square flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg,#1a1a2e,#16213e)" }}
+                  style={{ background: "linear-gradient(135deg,#1a0808,#200f0f)" }}
                 >
                   <svg className="w-12 h-12 text-neon opacity-30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     {platform === "YouTube"
@@ -341,7 +341,7 @@ function Music() {
                   ) : (
                     <div
                       className="rounded border border-dashed p-4 text-center font-mono text-[11px] text-slate-600"
-                      style={{ borderColor: "var(--border)", background: "rgba(192,132,252,0.03)" }}
+                      style={{ borderColor: "var(--border)", background: "rgba(239,68,68,0.04)" }}
                     >
                       Paste {platform} embed here
                     </div>
@@ -434,7 +434,7 @@ function Shows() {
               <div
                 className="flex items-center gap-6 md:gap-8 p-6 md:p-8 rounded-xl border transition-all duration-300 hover:translate-x-1 group"
                 style={{ background: "var(--surface)", borderColor: "var(--border)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(192,132,252,0.4)")}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(239,68,68,0.4)")}
                 onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
               >
                 <div
@@ -451,13 +451,13 @@ function Shows() {
                 <div className="flex items-center gap-4">
                   <span
                     className="hidden sm:block font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 rounded border"
-                    style={{ color: "var(--neon-cyan)", borderColor: "rgba(34,211,238,0.3)", background: "rgba(34,211,238,0.06)" }}
+                    style={{ color: "var(--neon-cyan)", borderColor: "rgba(249,115,22,0.35)", background: "rgba(249,115,22,0.08)" }}
                   >
                     {tag}
                   </span>
                   <a
                     href={tag === "Private" ? "#booking" : "#"}
-                    className="text-[12px] font-semibold tracking-wide px-4 py-2 border rounded transition-all hover:border-neon hover:shadow-[0_0_12px_rgba(192,132,252,0.3)]"
+                    className="text-[12px] font-semibold tracking-wide px-4 py-2 border rounded transition-all hover:border-neon hover:shadow-[0_0_12px_rgba(239,68,68,0.3)]"
                     style={{ borderColor: "var(--border)", color: "var(--neon)" }}
                   >
                     {tag === "Private" ? "Inquire" : "Tickets"}
@@ -578,7 +578,7 @@ function Booking() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-lg border font-mono text-[11px] font-bold text-slate-500 transition-all hover:border-neon hover:text-neon hover:shadow-[0_0_12px_rgba(192,132,252,0.3)]"
+                    className="w-10 h-10 flex items-center justify-center rounded-lg border font-mono text-[11px] font-bold text-slate-500 transition-all hover:border-neon hover:text-neon hover:shadow-[0_0_12px_rgba(239,68,68,0.3)]"
                     style={{ borderColor: "var(--border)", background: "var(--surface)" }}
                   >
                     {label}
@@ -625,7 +625,7 @@ function Booking() {
               <button
                 type="submit"
                 disabled={status !== "idle"}
-                className="w-full py-3 bg-neon text-black font-bold text-sm tracking-wide rounded-lg transition-all hover:bg-purple-300 hover:shadow-[0_0_24px_rgba(192,132,252,0.5)] disabled:opacity-60"
+                className="w-full py-3 bg-neon text-black font-bold text-sm tracking-wide rounded-lg transition-all hover:bg-red-400 hover:shadow-[0_0_24px_rgba(239,68,68,0.5)] disabled:opacity-60"
               >
                 {status === "sending" ? "Sending..." : status === "done" ? "Sent!" : "Send Inquiry"}
               </button>
