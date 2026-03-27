@@ -27,6 +27,11 @@
 .bg-cyan     { background-color: var(--neon-cyan) !important; }
 .border-cyan { border-color: var(--neon-cyan) !important; }
 
+/* Cover hover variants too (Tailwind may cache old compiled color) */
+.hover\:bg-neon:hover   { background-color: var(--neon) !important; }
+.hover\:text-neon:hover { color: var(--neon) !important; }
+.hover\:border-neon:hover { border-color: var(--neon) !important; }
+
 html {
   scroll-behavior: smooth;
 }
