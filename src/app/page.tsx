@@ -69,7 +69,7 @@ function Navbar() {
       }`}
     >
       <a href="#hero" className="flex items-center">
-        <LogoCanvas className="h-14 w-auto" />
+        <LogoCanvas className="h-20 w-auto" />
       </a>
 
       {/* Desktop */}
