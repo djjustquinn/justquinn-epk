@@ -380,15 +380,22 @@ function Photos() {
 
 /* ── Booking ─────────────────────────────────────────────────────────────── */
 function Booking() {
-  const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-    setTimeout(() => {
+    const res = await fetch("https://formspree.io/f/mykbkkzj", {
+      method: "POST",
+      body: new FormData(e.target as HTMLFormElement),
+      headers: { Accept: "application/json" },
+    });
+    if (res.ok) {
       setStatus("done");
       (e.target as HTMLFormElement).reset();
-    }, 900);
+    } else {
+      setStatus("error");
+    }
   }
 
   const inputClass = `w-full rounded-lg px-4 py-3 text-[0.95rem] text-slate-200 outline-none transition-all duration-200 focus:ring-2 focus:ring-neon/30 focus:border-neon`;
@@ -480,7 +487,7 @@ function Booking() {
               </div>
               <button
                 type="submit"
-                disabled={status !== "idle"}
+                disabled={status === "sending" || status === "done"}
                 className="w-full py-3 bg-neon text-black font-bold text-sm tracking-wide rounded-lg transition-all hover:bg-red-400 hover:shadow-[0_0_24px_rgba(239,68,68,0.5)] disabled:opacity-60"
               >
                 {status === "sending" ? "Sending..." : status === "done" ? "Sent!" : "Send Inquiry"}
@@ -488,6 +495,11 @@ function Booking() {
               {status === "done" && (
                 <p className="text-center font-mono text-[13px] text-cyan border border-cyan/30 bg-cyan/5 rounded-lg py-3">
                   Message sent! I&apos;ll get back to you within 48 hours.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-center font-mono text-[13px] text-red-400 border border-red-400/30 bg-red-400/5 rounded-lg py-3">
+                  Something went wrong — try emailing directly.
                 </p>
               )}
             </form>
