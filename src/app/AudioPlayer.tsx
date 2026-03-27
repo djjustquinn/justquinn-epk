@@ -2,71 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
-function Visualizer({ analyser, playing }: { analyser: AnalyserNode | null; playing: boolean }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rafRef = useRef<number>(0);
-  const BARS = 24;
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const draw = () => {
-      rafRef.current = requestAnimationFrame(draw);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const barW = canvas.width / BARS - 1;
-
-      if (analyser && playing) {
-        const data = new Uint8Array(analyser.frequencyBinCount);
-        analyser.getByteFrequencyData(data);
-        const step = Math.floor(data.length / BARS);
-
-        for (let i = 0; i < BARS; i++) {
-          const val = data[i * step] / 255;
-          const h = Math.max(2, val * canvas.height);
-          const x = i * (barW + 1);
-          ctx.fillStyle = `rgba(239,68,68,${0.4 + val * 0.6})`;
-          ctx.fillRect(x, canvas.height - h, barW, h);
-        }
-      } else {
-        // Idle animation — gentle pulse
-        const t = Date.now() / 600;
-        for (let i = 0; i < BARS; i++) {
-          const h = Math.max(2, (Math.sin(t + i * 0.4) * 0.5 + 0.5) * 6 + 2);
-          const x = i * (barW + 1);
-          ctx.fillStyle = "rgba(239,68,68,0.25)";
-          ctx.fillRect(x, canvas.height - h, barW, h);
-        }
-      }
-    };
-
-    draw();
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [analyser, playing]);
-
-  return <canvas ref={canvasRef} width={120} height={24} className="rounded" />;
-}
-
 export default function AudioPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const analyserRef = useRef<AnalyserNode | null>(null);
   const [muted, setMuted] = useState(true);
   const [playing, setPlaying] = useState(false);
   const [visible, setVisible] = useState(false);
-
-  function initAnalyser() {
-    if (analyserRef.current || !audioRef.current) return;
-    const ctx = new AudioContext();
-    const src = ctx.createMediaElementSource(audioRef.current);
-    const analyser = ctx.createAnalyser();
-    analyser.fftSize = 128;
-    src.connect(analyser);
-    analyser.connect(ctx.destination);
-    analyserRef.current = analyser;
-  }
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -81,11 +21,9 @@ export default function AudioPlayer() {
     });
 
     const unmute = () => {
-      initAnalyser();
       if (audio.muted) {
         audio.muted = false;
         setMuted(false);
-        if (!audio.paused) setPlaying(true);
       }
       document.removeEventListener("click", unmute);
       document.removeEventListener("keydown", unmute);
@@ -106,7 +44,6 @@ export default function AudioPlayer() {
   function toggleMute() {
     const audio = audioRef.current;
     if (!audio) return;
-    initAnalyser();
     audio.muted = !audio.muted;
     setMuted(audio.muted);
   }
@@ -150,11 +87,10 @@ export default function AudioPlayer() {
           )}
         </button>
 
-        {/* Track info + visualizer */}
-        <div className="flex flex-col gap-1 leading-tight">
+        {/* Track info */}
+        <div className="flex flex-col leading-tight">
           <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500">Now Playing</span>
           <span className="font-mono text-[11px] text-slate-300">Actin Tough</span>
-          <Visualizer analyser={analyserRef.current} playing={playing} />
         </div>
 
         {/* Mute/Unmute */}
