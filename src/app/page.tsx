@@ -307,27 +307,13 @@ function Music() {
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/IGudys5-rWs?start=1200"
+                src="https://www.youtube.com/embed/i5Qbxi9baVI"
                 title="justQuinn — YouTube"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
           </div>
-        </Reveal>
-        <Reveal delay={260}>
-          <p className="mt-5 text-center font-mono text-[11px] tracking-widest uppercase text-slate-500">
-            360° video —{" "}
-            <a
-              href="https://www.youtube.com/watch?v=IGudys5-rWs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neon hover:opacity-70 transition-opacity"
-            >
-              open on YouTube
-            </a>
-            {" "}to drag &amp; change perspective
-          </p>
         </Reveal>
         <Reveal delay={280}>
           <div className="mt-6 flex justify-center">
