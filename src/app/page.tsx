@@ -53,7 +53,6 @@ function Label({ text }: { text: string }) {
 /* ── Navbar ──────────────────────────────────────────────────────────────── */
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -73,13 +72,12 @@ function Navbar() {
         <LogoCanvas className="h-20 w-auto" />
       </a>
 
-      {/* Desktop */}
-      <ul className="hidden md:flex items-center gap-8">
+      <ul className="flex items-center gap-4 md:gap-8">
         {links.slice(0, -1).map((l) => (
           <li key={l}>
             <a
               href={l === "Photos" ? "/photos" : `#${l.toLowerCase()}`}
-              className="text-[13px] font-medium tracking-widest uppercase text-slate-400 hover:text-white transition-colors"
+              className="text-[11px] md:text-[13px] font-medium tracking-widest uppercase text-slate-400 hover:text-white transition-colors"
             >
               {l}
             </a>
@@ -88,49 +86,12 @@ function Navbar() {
         <li>
           <a
             href="#booking"
-            className="text-[13px] font-medium tracking-widest uppercase text-neon border border-neon px-5 py-2 rounded hover:bg-neon hover:text-black transition-all"
+            className="text-[11px] md:text-[13px] font-medium tracking-widest uppercase text-neon border border-neon px-3 md:px-5 py-2 rounded hover:bg-neon hover:text-black transition-all"
           >
             Book
           </a>
         </li>
       </ul>
-
-      {/* Mobile toggle */}
-      <button
-        className="md:hidden flex flex-col gap-[5px] p-1 z-[101]"
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Toggle menu"
-      >
-        {[0, 1, 2].map((i) => (
-          <span
-            key={i}
-            className="block w-6 h-0.5 bg-slate-200 transition-all duration-300"
-            style={
-              open
-                ? i === 0 ? { transform: "rotate(45deg) translate(5px,5px)" }
-                : i === 1 ? { opacity: 0 }
-                : { transform: "rotate(-45deg) translate(5px,-5px)" }
-                : {}
-            }
-          />
-        ))}
-      </button>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="fixed inset-0 bg-[#080810]/97 flex flex-col items-center justify-center gap-10 z-[100]">
-          {links.map((l) => (
-            <a
-              key={l}
-              href={l === "Book" ? "#booking" : l === "Photos" ? "/photos" : `#${l.toLowerCase()}`}
-              className="text-2xl font-semibold tracking-widest uppercase text-white"
-              onClick={() => setOpen(false)}
-            >
-              {l}
-            </a>
-          ))}
-        </div>
-      )}
     </nav>
   );
 }
