@@ -315,6 +315,20 @@ function Music() {
             </div>
           </div>
         </Reveal>
+        <Reveal delay={260}>
+          <p className="mt-5 text-center font-mono text-[11px] tracking-widest uppercase text-slate-500">
+            360° video —{" "}
+            <a
+              href="https://www.youtube.com/watch?v=IGudys5-rWs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neon hover:opacity-70 transition-opacity"
+            >
+              open on YouTube
+            </a>
+            {" "}to drag &amp; change perspective
+          </p>
+        </Reveal>
         <Reveal delay={280}>
           <div className="mt-6 flex justify-center">
             <a
