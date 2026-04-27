@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import LogoCanvas from "./LogoCanvas";
-import AudioPlayer from "./AudioPlayer";
 
 /* ── Scroll reveal hook ──────────────────────────────────────────────────── */
 function useReveal() {
@@ -512,7 +511,6 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <AudioPlayer />
       <main>
         <Hero />
         <Bio />
